@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AssemblyName>RobinsMaterialBuyout</AssemblyName>
+
+		<UniqueId>ceddieeee.RobinsMaterialBuyout</UniqueId>
+		<Name>Robin's Material Buy-out</Name>
+		<Authors>ceddieeee</Authors>
+		<Description>Allows Robin to supply missing construction materials for a gold fee.</Description>
+		<Version>1.0.1</Version>
+		<MinimumApiVersion>auto</MinimumApiVersion>
+		<MinimumGameVersion_Behavior>SetFull</MinimumGameVersion_Behavior>
+		<UpdateKeys>Nexus:43594;</UpdateKeys>
+	</PropertyGroup>
+
+	<PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+		<EnableHarmony>true</EnableHarmony>
+		<ModFolderName>Robin's Material Buy-out</ModFolderName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Leclair.Stardew.ModManifestBuilder" Version="2.4.1" />
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+    <PackageReference Include="Pathoschild.Stardew.ModTranslationClassBuilder" Version="2.2.1" />
+  </ItemGroup>
+
+</Project>

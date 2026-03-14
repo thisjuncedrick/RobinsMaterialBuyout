@@ -1,0 +1,13 @@
+{
+  "Config.UseMod.Name": "Enable Mod",
+  "Config.UseMod.Tooltip": "Enable or disable this mod.",
+  "Config.ShowInfo.Name": "Display Info Board",
+  "Config.ShowInfo.Tooltip": "Show the material breakdown board next to the menu.",
+  "Config.UseBasePrice.Name": "Use Base Material Prices",
+  "Config.UseBasePrice.Tooltip": "If enabled, materials always cost their base value. If disabled, costs adjust based on your professions.",
+
+  "UI.InfoBoard.Header": "Missing Materials",
+  "UI.InfoBoard.Total.MaterialCost": "Material Cost",
+  "UI.InfoBoard.Total.BuildPrice": "Building Fee",
+  "UI.InfoBoard.Total.TotalPayment": "Total Price"
+}
