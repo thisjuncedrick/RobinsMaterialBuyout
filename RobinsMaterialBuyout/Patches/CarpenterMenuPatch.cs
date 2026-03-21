@@ -127,7 +127,7 @@ namespace RobinsMaterialBuyout.Patches
       _lastBlueprintKey = currentBlueprintKey;
 
       //Rebuild data model
-      var missing = MaterialCostService.GetMissingMaterials(menu.ingredients, _config.UseBasePrice);
+      var missing = MaterialCostService.GetMissingMaterials(menu.ingredients, _config.UseBasePrice, _config.PriceIncreaseRate);
 
       if (missing.Any())
       {

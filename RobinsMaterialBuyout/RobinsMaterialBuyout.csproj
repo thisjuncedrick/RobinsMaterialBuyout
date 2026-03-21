@@ -6,7 +6,7 @@
 		<Name>Robin's Material Buy-out</Name>
 		<Authors>ceddieeee</Authors>
 		<Description>Allows Robin to supply missing construction materials for a gold fee.</Description>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<MinimumApiVersion>auto</MinimumApiVersion>
 		<MinimumGameVersion_Behavior>SetFull</MinimumGameVersion_Behavior>
 		<UpdateKeys>Nexus:43594;</UpdateKeys>

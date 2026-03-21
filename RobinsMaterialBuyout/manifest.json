@@ -10,7 +10,7 @@
   "UniqueID": "ceddieeee.RobinsMaterialBuyout",
   "Name": "Robin's Material Buy-out",
   "Author": "ceddieeee",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Description": "Allows Robin to supply missing construction materials for a gold fee.",
   "MinimumApiVersion": "4.5",
   "MinimumGameVersion": "1.6.15",

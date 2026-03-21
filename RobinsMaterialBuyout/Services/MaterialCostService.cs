@@ -1,5 +1,5 @@
 ﻿using RobinsMaterialBuyout.Models;
-
+using StardewModdingAPI;
 using StardewValley;
 
 namespace RobinsMaterialBuyout.Services
@@ -7,15 +7,28 @@ namespace RobinsMaterialBuyout.Services
   internal class MaterialCostService
   {
     private static readonly Dictionary<string, int> PriceCache = new();
+    private static bool _rateWarningLogged = false;
 
     public static void ClearCache()
     {
       PriceCache.Clear();
+      _rateWarningLogged = false;
       ModEntry.Log("Material price cache invalidated.");
     }
 
-    public static List<BuyoutMaterial> GetMissingMaterials(List<Item> ingredients, bool useBasePrice)
+    public static List<BuyoutMaterial> GetMissingMaterials(List<Item> ingredients, bool useBasePrice, float priceIncreaseRate)
     {
+      float sanitizedRate = priceIncreaseRate;
+      if (!float.IsFinite(priceIncreaseRate) || priceIncreaseRate < 0f)
+      {
+        if (!_rateWarningLogged)
+        {
+          ModEntry.Log($"Invalid PriceIncreaseRate value ({priceIncreaseRate}). Defaulting to 0.", LogLevel.Warn);
+          _rateWarningLogged = true;
+        }
+        sanitizedRate = 0f;
+      }
+
       var missing = new List<BuyoutMaterial>();
       foreach (var item in ingredients)
       {
@@ -25,7 +38,8 @@ namespace RobinsMaterialBuyout.Services
         if (need > 0)
         {
           int unitPrice = GetUnitPrice(item.QualifiedItemId, useBasePrice, item.Name);
-          missing.Add(new BuyoutMaterial(item, need, need * unitPrice));
+          int missingTotal = (int)Math.Round(need * unitPrice * (1f + sanitizedRate));
+          missing.Add(new BuyoutMaterial(item, need, missingTotal));
         }
       }
       return missing;

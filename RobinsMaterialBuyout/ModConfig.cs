@@ -9,6 +9,7 @@ namespace RobinsMaterialBuyout
     public bool UseMod { get; set; } = true;
     public bool ShowInfoBoard { get; set; } = true;
     public bool UseBasePrice { get; set; } = false;
+    public float PriceIncreaseRate { get; set; } = 0.5f;
 
     public void RegisterGMCM(IModHelper helper, IManifest manifest)
     {
@@ -49,6 +50,15 @@ namespace RobinsMaterialBuyout
         getValue: () => UseBasePrice,
         setValue: v => UseBasePrice = v
       );
+
+      gmcm.AddNumberOption(
+        mod:      manifest,
+        name:     () => I18n.Config_PriceIncreaseRate_Name(),
+        tooltip:  () => I18n.Config_PriceIncreaseRate_Tooltip(),
+        getValue: () => PriceIncreaseRate,
+        setValue: v => PriceIncreaseRate = v
+
+      );
     }
 
     private void ResetConfig(IModHelper helper)
@@ -56,6 +66,7 @@ namespace RobinsMaterialBuyout
       UseMod = true;
       ShowInfoBoard = true;
       UseBasePrice = false;
+      PriceIncreaseRate = 0.5f;
 
       helper.WriteConfig(this);
     }

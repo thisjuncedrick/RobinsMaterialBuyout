@@ -5,6 +5,8 @@
   "Config.ShowInfo.Tooltip": "Show the material breakdown board next to the menu.",
   "Config.UseBasePrice.Name": "Use Base Material Prices",
   "Config.UseBasePrice.Tooltip": "If enabled, materials always cost their base value. If disabled, costs adjust based on your professions.",
+  "Config.PriceIncreaseRate.Name": "Price Increase Rate",
+  "Config.PriceIncreaseRate.Tooltip": "Sets the markup rate applied to the total material cost. 0 means no increase; 1 doubles the total.",
 
   "UI.InfoBoard.Header": "Missing Materials",
   "UI.InfoBoard.Total.MaterialCost": "Material Cost",
